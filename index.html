@@ -1,92 +1,112 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Prompt Inception</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompt Inception - Componentes</title>
   <style>
     body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f1f5f9;
+      color: #0f172a;
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(180deg, #0f172a, #1e293b);
-      color: #f1f5f9;
-    }
-    header {
       padding: 2rem;
+    }
+    h1 {
       text-align: center;
-      background-color: #1e293b;
-      border-bottom: 1px solid #334155;
+      color: #1d4ed8;
     }
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0;
-      color: #38bdf8;
+    details {
+      background-color: #fff;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
-    header p {
-      margin-top: 0.5rem;
-      color: #94a3b8;
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+      color: #0f172a;
     }
-    nav {
-      text-align: center;
-      margin-top: 2rem;
+    p, li {
+      margin-left: 1rem;
     }
-    nav a {
-      margin: 0 1rem;
-      color: #38bdf8;
-      text-decoration: none;
+    .sub {
       font-weight: 600;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    section {
-      max-width: 800px;
-      margin: 4rem auto;
-      padding: 0 2rem;
-    }
-    h2 {
-      color: #facc15;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #64748b;
-      border-top: 1px solid #334155;
-      background-color: #0f172a;
+      margin-top: 0.5rem;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Prompt Inception</h1>
-    <p>Engenharia de Prompts Inteligente e Estruturada</p>
-  </header>
+  <h1>🧩 Prompt Inception – Componentes</h1>
 
-  <nav>
-    <a href="#sobre">Sobre</a>
-    <a href="#exemplos">Exemplos</a>
-    <a href="#contato">Contato</a>
-  </nav>
+  <details>
+    <summary>🧩 Componente: Perfil/Função (Profile/Role)</summary>
+    <p><span class="sub">Descrição:</span> Define o papel assumido pelo modelo na tarefa, como especialista, avaliador ou instrutor.</p>
+    <p><span class="sub">Pattern Recomendado:</span> Persona Pattern</p>
+    <p><span class="sub">Exemplo:</span> Como um especialista em usabilidade, identifique defeitos na interface com base nas heurísticas de Nielsen.</p>
+  </details>
 
-  <section id="sobre">
-    <h2>🧠 Sobre o Projeto</h2>
-    <p>Prompt Inception é uma abordagem para projetar, refinar e empilhar prompts de forma sistemática. Nosso objetivo é permitir que usuários extraiam o máximo de desempenho de LLMs como o ChatGPT, promovendo clareza, controle e criatividade.</p>
-  </section>
+  <details>
+    <summary>🧩 Componente: Contexto (Context)</summary>
+    <p><span class="sub">🔹 Subcomponente: Contexto Geral</span><br>
+    Descrição: Apresenta o cenário ou situação em que a tarefa será realizada.<br>
+    Exemplo: A interface avaliada é a tela de cadastro de um aplicativo bancário em fase beta.</p>
+    <p><span class="sub">🔹 Subcomponente: Público-Alvo</span><br>
+    Descrição: Indica quem irá consumir a resposta gerada.<br>
+    Exemplo: O relatório será lido por engenheiros de software responsáveis pela correção dos problemas.</p>
+    <p><span class="sub">🔹 Subcomponente: Problema/Desafio/Motivação</span><br>
+    Descrição: Explica o motivo ou objetivo principal da atividade.<br>
+    Exemplo: A tarefa visa detectar falhas de usabilidade críticas que comprometam a navegação do usuário.</p>
+  </details>
 
-  <section id="exemplos">
-    <h2>💡 Exemplos</h2>
-    <p>Em breve, você encontrará aqui exemplos interativos de como aplicar os padrões do Prompt Inception na prática.</p>
-  </section>
+  <details>
+    <summary>🧩 Componente: Instrução Principal (Directive)</summary>
+    <p><span class="sub">Descrição:</span> Declara com clareza a ação que o modelo deve realizar.</p>
+    <p><span class="sub">Exemplo:</span> Analise a imagem da interface e descreva os defeitos encontrados, classificando-os pela heurística violada.</p>
+  </details>
 
-  <section id="contato">
-    <h2>📬 Contato</h2>
-    <p>Entre em contato pelo e-mail: <a href="mailto:lennon@prompt-inception.com" style="color: #38bdf8;">lennon@prompt-inception.com</a></p>
-  </section>
+  <details>
+    <summary>🧩 Componente: Formato da Resposta (Output Format)</summary>
+    <p><span class="sub">🔹 Subcomponente: Tom</span><br>
+    Descrição: Define o estilo de linguagem esperado na resposta.<br>
+    Exemplo: Resposta técnica e direta, com linguagem objetiva e formal.</p>
+    <p><span class="sub">🔹 Subcomponente: Orientação do Resultado</span><br>
+    Descrição: Especifica como a saída deve ser estruturada.<br>
+    Exemplo: Retorne em tópicos numerados contendo: (1) descrição do defeito, (2) heurística violada, (3) justificativa com até 2 linhas.</p>
+    <p><span class="sub">🔹 Subcomponente: Formato</span><br>
+    Descrição: Determina o tipo e a forma da resposta.<br>
+    Exemplo: Formato: lista numerada com no máximo 3 itens.</p>
+  </details>
 
-  <footer>
-    &copy; 2025 Prompt Inception · Desenvolvido por Lennon Chaves
-  </footer>
+  <details>
+    <summary>🧩 Componente: Restrições (Constraint)</summary>
+    <p><span class="sub">Descrição:</span> Define limitações que a resposta deve obedecer.</p>
+    <p><span class="sub">Exemplo:</span> Não inclua defeitos hipotéticos ou genéricos; analise apenas o que é visível na imagem fornecida.</p>
+  </details>
+
+  <details>
+    <summary>🧩 Componente: Exemplos (Examples)</summary>
+    <p><span class="sub">Descrição:</span> Fornece modelos concretos de respostas esperadas.</p>
+    <p><span class="sub">Exemplo:</span> 
+    <ul>
+      <li>Falta de rótulo no botão – Heurística: Reconhecimento em vez de memorização – Justificativa: O botão não possui texto visível nem ícone claro.</li>
+    </ul>
+    </p>
+  </details>
+
+  <details>
+    <summary>🧩 Componente: Fluxo de Trabalho (Workflow)</summary>
+    <p><span class="sub">Descrição:</span> Lista as etapas que o modelo deve seguir para cumprir a tarefa.</p>
+    <p><span class="sub">Exemplo:</span>
+    <ul>
+      <li>1) Análise visual da imagem</li>
+      <li>2) Descrição dos defeitos com base nas heurísticas</li>
+      <li>3) Classificação da heurística violada em cada defeito</li>
+    </ul>
+    </p>
+  </details>
+
 </body>
 </html>
